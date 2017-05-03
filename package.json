@@ -1,122 +1,132 @@
 {
-  "name": "open-in-editor-vscode",
-  "displayName": "Open in Editor",
-  "description": "Open a file in external editor",
-  "version": "0.9.0",
-  "engines": {
-    "vscode": "^1.11.0"
-  },
-  "publisher": "generalov",
-  "license": "SEE LICENSE IN LICENSE",
-  "keywords": [
-    "open file",
-    "open in editor",
-    "open in external editor",
-    "open in visual studio",
-    "open",
-    "file",
-    "editor",
-    "alternative editor",
-    "atom",
-    "code",
-    "vscode",
-    "idea",
-    "phpstorm",
-    "webstorm",
-    "sublime",
-    "visual studio",
-    "vim",
-    "emacs",
-    "IDE"
-  ],
-  "categories": [
-    "Other"
-  ],
-  "icon": "./images/icon.png",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/generalov/open-in-editor-vscode.git"
-  },
-  "bugs": {
-    "url": "https://github.com/generalov/open-in-editor-vscode/issues",
-    "email": "e.generalov@gmail.com"
-  },
-  "activationEvents": [
-    "onCommand:alt-editor.openFile",
-    "onCommand:alt-editor.openActiveDocument"
-  ],
-  "contributes": {
-    "commands": [
-      {
-        "command": "alt-editor.openActiveDocument",
-        "title": "Open in External Editor"
-      },
-      {
-        "command": "alt-editor.openFile",
-        "title": "Open in External Editor"
-      }
-    ],
-    "keybindings": [ {
-        "key": "Alt+Shift+E",
-        "command": "alt-editor.openActiveDocument",
-        "when": "editorTextFocus"
-      } ],
-    "menus": {
-      "editor/context": [ {
-          "group": "navigation@99",
-          "command": "alt-editor.openActiveDocument"
-      } ],
-      "editor/title/context": [ {
-          "group": "alt-editor@1",
-          "command": "alt-editor.openFile"
-      } ],
-      "explorer/context": [ {
-          "group": "navigation@99",
-          "command": "alt-editor.openFile"
-      } ]
+    "name": "open-in-editor-vscode",
+    "displayName": "Open in Editor",
+    "description": "Open a file in external editor",
+    "version": "0.9.1",
+    "engines": {
+        "vscode": "^1.11.0"
     },
-    "configuration": {
-      "type": "object",
-      "title": "Open in External Editor configuration",
-      "properties": {
-        "alt-editor.name": {
-          "type": [ "string", null ],
-          "default": null,
-          "description": "Editor to open a file. Once value is set, we try to detect a command to launch an editor."
+    "publisher": "generalov",
+    "license": "SEE LICENSE IN LICENSE",
+    "keywords": [
+        "atom",
+        "idea",
+        "sublime",
+        "visual studio",
+        "vim"
+    ],
+    "categories": [
+        "Other"
+    ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#ffffff",
+        "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/generalov/open-in-editor-vscode.git"
+    },
+    "bugs": {
+        "url": "https://github.com/generalov/open-in-editor-vscode/issues",
+        "email": "e.generalov@gmail.com"
+    },
+    "activationEvents": [
+        "onCommand:alt-editor.openFile",
+        "onCommand:alt-editor.openActiveDocument"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "alt-editor.openActiveDocument",
+                "title": "Open in External Editor"
+            },
+            {
+                "command": "alt-editor.openFile",
+                "title": "Open in External Editor"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "Alt+Shift+E",
+                "command": "alt-editor.openActiveDocument",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "group": "navigation@99",
+                    "command": "alt-editor.openActiveDocument"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "group": "alt-editor@1",
+                    "command": "alt-editor.openFile"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "group": "navigation@99",
+                    "command": "alt-editor.openFile"
+                }
+            ]
         },
-        "alt-editor.binary": {
-          "type": [ "string", null ],
-          "default": null,
-          "description": "Command to launch an editor."
-        },
-        "alt-editor.args": {
-          "type": [ "string", null ],
-          "default": null,
-          "description": "Option to specify arguments for a command. It can contain placeholders to be replaced by actual values. Supported placeholders: {filename}, {line} and {column}."
-        },
-        "alt-editor.terminal": {
-          "type": [ "boolean", null ],
-          "default": null,
-          "description": "Set to `true` if the editor to be opened in the terminal."
+        "configuration": {
+            "type": "object",
+            "title": "Open in External Editor configuration",
+            "properties": {
+                "alt-editor.name": {
+                    "type": [
+                        "string",
+                        null
+                    ],
+                    "default": null,
+                    "description": "Editor to open a file. Once value is set, we try to detect a command to launch an editor."
+                },
+                "alt-editor.binary": {
+                    "type": [
+                        "string",
+                        null
+                    ],
+                    "default": null,
+                    "description": "Command to launch an editor."
+                },
+                "alt-editor.args": {
+                    "type": [
+                        "string",
+                        null
+                    ],
+                    "default": null,
+                    "description": "Option to specify arguments for a command. It can contain placeholders to be replaced by actual values. Supported placeholders: {filename}, {line} and {column}."
+                },
+                "alt-editor.terminal": {
+                    "type": [
+                        "boolean",
+                        null
+                    ],
+                    "default": null,
+                    "description": "Set to `true` if the editor to be opened in the terminal."
+                }
+            }
         }
-      }
+    },
+    "main": "./out/src/extension",
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "open-in-editor": "github:generalov/open-in-editor#vim-linux"
     }
-  },
-  "main": "./out/src/extension",
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0",
-    "mocha": "^2.3.3",
-    "@types/node": "^6.0.40",
-    "@types/mocha": "^2.2.32"
-  },
-  "dependencies": {
-    "open-in-editor": "github:generalov/open-in-editor#vim-linux"
-  }
 }

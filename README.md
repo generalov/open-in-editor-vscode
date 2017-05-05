@@ -75,15 +75,7 @@ Override the default `vim` arguments to open files in the tabs in the same insta
 
 The VIM should be compiled with `+clientserver` flag. Run the `vim --version` and check the output.
 
-## Release Notes
-
-### 0.9.0
-
-Initial release of the extension.
-
-* * *
-
-### For more information
+## For more information
 
 -   Powered by [open-in-editor](https://github.com/lahmatiy/open-in-editor)
 

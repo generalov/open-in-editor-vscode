@@ -2,7 +2,7 @@
     "name": "open-in-editor-vscode",
     "displayName": "Open in Editor",
     "description": "Open a file in external editor",
-    "version": "0.9.2",
+    "version": "0.9.3",
     "engines": {
         "vscode": "^1.11.0"
     },
@@ -125,19 +125,27 @@
     },
     "main": "./out/src/extension",
     "scripts": {
-        "vscode:prepublish": "tsc -p ./",
+        "vscode:prepublish": "tsc -p ./ && npm run changelog",
         "compile": "tsc -watch -p ./",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+        "release": "vsce publish patch",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
+        "@types/mocha": "^2.2.32",
         "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+        "cz-conventional-changelog": "2.0.0",
+        "mocha": "^2.3.3",
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0"
     },
     "dependencies": {
         "open-in-editor": "github:generalov/open-in-editor#vim-linux"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }

@@ -1,7 +1,20 @@
-# Change Log
-All notable changes to the "open-in-editor-vscode" extension will be documented in this file.
+<a name="0.9.3"></a>
+## [0.9.3](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.2...v0.9.3) (2017-05-05)
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
-- Initial release
+
+<a name="0.9.2"></a>
+## [0.9.2](https://github.com/generalov/open-in-editor-vscode/compare/0.9.2...v0.9.2) (2017-05-03)
+
+
+
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/generalov/open-in-editor-vscode/compare/0.9.1...v0.9.1) (2017-05-03)
+
+
+
+<a name="0.9.0"></a>
+# 0.9.0 (2017-05-01)
+
+
+

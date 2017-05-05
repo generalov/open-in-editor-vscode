@@ -9,11 +9,11 @@
     "publisher": "generalov",
     "license": "SEE LICENSE IN LICENSE",
     "keywords": [
-        "atom",
-        "idea",
-        "sublime",
+        "open in editor",
+        "open in visual studio",
         "visual studio",
-        "vim"
+        "idea",
+        "sublime"
     ],
     "categories": [
         "Other"
@@ -80,6 +80,17 @@
                 "alt-editor.name": {
                     "type": [
                         "string",
+                        null
+                    ],
+                    "enum": [
+                        "atom",
+                        "emacs",
+                        "idea14ce",
+                        "phpstorm",
+                        "sublime",
+                        "vim",
+                        "visualstudio",
+                        "webstorm",
                         null
                     ],
                     "default": null,

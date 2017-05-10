@@ -2,18 +2,18 @@
     "name": "open-in-editor-vscode",
     "displayName": "Open in Editor",
     "description": "Open a file in external editor",
-    "version": "0.9.3",
+    "version": "0.9.4",
     "engines": {
         "vscode": "^1.11.0"
     },
     "publisher": "generalov",
     "license": "SEE LICENSE IN LICENSE",
     "keywords": [
-        "open in editor",
-        "open in visual studio",
-        "visual studio",
+        "atom",
         "idea",
-        "sublime"
+        "sublime",
+        "visual studio",
+        "vim"
     ],
     "categories": [
         "Other"

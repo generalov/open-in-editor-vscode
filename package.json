@@ -1,19 +1,19 @@
 {
     "name": "open-in-editor-vscode",
     "displayName": "Open in Editor",
-    "description": "Open a file in external editor",
-    "version": "0.9.4",
+    "description": "Open a file in Visual Studio, Atom Editor, Emacs, IntelliJ IDEA Community Edition, Sublime Text, PhpStorm, Vim, WebStorm or any other external editor from VS Code.",
+    "version": "0.9.5",
     "engines": {
         "vscode": "^1.11.0"
     },
     "publisher": "generalov",
     "license": "SEE LICENSE IN LICENSE",
     "keywords": [
-        "atom",
-        "idea",
-        "sublime",
-        "visual studio",
-        "vim"
+        "open",
+        "edit",
+        "switch",
+        "file",
+        "editor"
     ],
     "categories": [
         "Other"

@@ -1,3 +1,8 @@
+<a name="0.9.5"></a>
+## [0.9.5](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.4...v0.9.5) (2017-05-12)
+
+
+
 <a name="0.9.4"></a>
 ## [0.9.4](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.3...v0.9.4) (2017-05-10)
 

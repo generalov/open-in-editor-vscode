@@ -2,7 +2,7 @@
     "name": "open-in-editor-vscode",
     "displayName": "Open in Editor",
     "description": "Open a file in Visual Studio, Atom Editor, Emacs, IntelliJ IDEA Community Edition, Sublime Text, PhpStorm, Vim, WebStorm or any other external editor from VS Code.",
-    "version": "0.9.5",
+    "version": "0.9.6",
     "engines": {
         "vscode": "^1.11.0"
     },

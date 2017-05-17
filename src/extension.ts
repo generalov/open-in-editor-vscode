@@ -1,6 +1,6 @@
 'use strict';
 import * as vscode from 'vscode';
-import { configure as findEditor } from 'open-in-editor';
+import { configure as findEditor } from '@generalov/open-in-editor';
 
 const extension = 'alt-editor';
 const commands = {

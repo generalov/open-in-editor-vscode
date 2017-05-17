@@ -68,12 +68,12 @@ Use the Visual Studio IDE as an alternative editor.
 
 #### Vim
 
-Override the default `vim` arguments to open files in the tabs in the same instance.
+Override the default arguments to use a single instance of the Vim editor and open files in tabs.
 
     "alt-editor.name": "vim",
     "alt-editor.args": "--servername Code --remote-tab-silent \"+call cursor({line}, {column})\" {filename}"
 
-The VIM should be compiled with `+clientserver` flag. Run the `vim --version` and check the output.
+The Vim should be compiled with `+clientserver` flag. Please run the `vim --version` and check the output.
 
 ## For more information
 

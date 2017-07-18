@@ -32,15 +32,10 @@
         "email": "e.generalov@gmail.com"
     },
     "activationEvents": [
-        "onCommand:alt-editor.openFile",
-        "onCommand:alt-editor.openActiveDocument"
+        "onCommand:alt-editor.openFile"
     ],
     "contributes": {
         "commands": [
-            {
-                "command": "alt-editor.openActiveDocument",
-                "title": "Open in External Editor"
-            },
             {
                 "command": "alt-editor.openFile",
                 "title": "Open in External Editor"
@@ -49,7 +44,7 @@
         "keybindings": [
             {
                 "key": "Alt+Shift+E",
-                "command": "alt-editor.openActiveDocument",
+                "command": "alt-editor.openFile",
                 "when": "editorTextFocus"
             }
         ],
@@ -57,7 +52,7 @@
             "editor/context": [
                 {
                     "group": "navigation@99",
-                    "command": "alt-editor.openActiveDocument"
+                    "command": "alt-editor.openFile"
                 }
             ],
             "editor/title/context": [
@@ -136,9 +131,9 @@
         "@types/mocha": "^2.2.41",
         "@types/node": "^7.0.18",
         "cz-conventional-changelog": "^2.0.0",
-        "mocha": "^3.4.1",
-        "typescript": "^2.3.2",
-        "vscode": "^1.1.0"
+        "mocha": "3.5.0",
+        "typescript": "2.4.2",
+        "vscode": "1.1.4"
     },
     "dependencies": {
         "@generalov/open-in-editor": "^2.3.0"

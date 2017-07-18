@@ -58,6 +58,22 @@ Use these setting if the editor currently is not supported or if the editor's pa
 
 **`alt-editor.terminal`**: set this to `true` if the editor should be opened in a terminal. Mac OS and Linux are supported.
 
+### Custom editors with key bindings
+Use custom [Keyboard Shortcuts](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization) to open the current file with different editors.
+```
+[{
+  "key": "shift+alt+v",
+  "command": "alt-editor.openFile",
+  "args": { "name": "vim" },
+  "when": "editorTextFocus"
+}, {
+  "key": "shift+alt+s",
+  "command": "alt-editor.openFile",
+  "args": { "name": "sublime" },
+  "when": "editorTextFocus"
+}]
+```
+
 ### Examples:
 
 #### Visual Studio

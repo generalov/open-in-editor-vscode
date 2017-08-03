@@ -1,3 +1,13 @@
+<a name="0.9.7"></a>
+## [0.9.7](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.6...v0.9.7) (2017-08-03)
+
+
+### Features
+
+* open the current file with different editors from different shortcuts (fixes [#1](https://github.com/generalov/open-in-editor-vscode/issues/1)). ([ac6fde1](https://github.com/generalov/open-in-editor-vscode/commit/ac6fde1))
+
+
+
 <a name="0.9.6"></a>
 ## [0.9.6](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.5...v0.9.6) (2017-05-17)
 

@@ -108,21 +108,30 @@ function openFileMenu(uri: vscode.Uri) {
 }
 
 function openFileCommand(...args: any[]) {
-    if (args.length === 0) {
-        openTextEditorFile(vscode.window.activeTextEditor, null);
-    } else if (args[0].scheme) {
-        if (vscode.window.activeTextEditor && args[0].path === vscode.window.activeTextEditor.document.fileName) {
-            openTextEditorFile(vscode.window.activeTextEditor, args[0])
+    args = args.filter(Boolean)
+    let uri: vscode.Uri = null;
+    let editor: vscode.TextEditor = vscode.window.activeTextEditor;
+    let config: EditorConfig = args.length === 2 ? args[1] : null;
+
+    if (args.length) {
+        if (args[0].scheme) {
+            if (!vscode.window.activeTextEditor ||
+                args[0].path !== vscode.window.activeTextEditor.document.fileName
+            ) {
+                uri = args[0]
+            }
+        } else if (args[0].document) {
+            editor = args[0]
         } else {
-            openFileMenu(args[0])
+            config = args[0]
         }
-    } else if (args[0].document) {
-        openTextEditorFile(args[0], null)
-    } else if (args.length === 1) {
-        openTextEditorFile(vscode.window.activeTextEditor, args[0])
-    } else {
-        vscode.window.showErrorMessage('Invalid arguments.');
     }
+
+    if (uri) {
+        openFileMenu(uri)
+    } else {
+        openTextEditorFile(editor, config);
+    } 
 }
 
 export function activate(context: vscode.ExtensionContext) {

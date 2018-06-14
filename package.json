@@ -1,142 +1,142 @@
 {
-    "name": "open-in-editor-vscode",
-    "displayName": "Open in Editor",
-    "description": "Open a file in Visual Studio, Atom Editor, Emacs, IntelliJ IDEA Community Edition, Sublime Text, PhpStorm, Vim, WebStorm or any other external editor from VS Code.",
-    "version": "1.0.0",
-    "engines": {
-        "vscode": "^1.11.0"
-    },
-    "publisher": "generalov",
-    "license": "SEE LICENSE IN LICENSE",
-    "keywords": [
-        "open",
-        "edit",
-        "switch",
-        "file",
-        "editor"
+  "name": "open-in-editor-vscode",
+  "displayName": "Open in Editor",
+  "description": "Open a file in Visual Studio, Atom Editor, Emacs, IntelliJ IDEA Community Edition, Sublime Text, PhpStorm, Vim, WebStorm or any other external editor from VS Code.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "publisher": "generalov",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "open",
+    "edit",
+    "switch",
+    "file",
+    "editor"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/generalov/open-in-editor-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/generalov/open-in-editor-vscode/issues",
+    "email": "e.generalov@gmail.com"
+  },
+  "activationEvents": [
+    "onCommand:alt-editor.openFile"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "alt-editor.openFile",
+        "title": "Open in External Editor"
+      }
     ],
-    "categories": [
-        "Other"
+    "keybindings": [
+      {
+        "key": "Alt+Shift+E",
+        "command": "alt-editor.openFile",
+        "when": "editorTextFocus"
+      }
     ],
-    "icon": "images/icon.png",
-    "galleryBanner": {
-        "color": "#ffffff",
-        "theme": "light"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/generalov/open-in-editor-vscode.git"
-    },
-    "bugs": {
-        "url": "https://github.com/generalov/open-in-editor-vscode/issues",
-        "email": "e.generalov@gmail.com"
-    },
-    "activationEvents": [
-        "onCommand:alt-editor.openFile"
-    ],
-    "contributes": {
-        "commands": [
-            {
-                "command": "alt-editor.openFile",
-                "title": "Open in External Editor"
-            }
-        ],
-        "keybindings": [
-            {
-                "key": "Alt+Shift+E",
-                "command": "alt-editor.openFile",
-                "when": "editorTextFocus"
-            }
-        ],
-        "menus": {
-            "editor/context": [
-                {
-                    "group": "navigation@99",
-                    "command": "alt-editor.openFile"
-                }
-            ],
-            "editor/title/context": [
-                {
-                    "group": "alt-editor@1",
-                    "command": "alt-editor.openFile"
-                }
-            ],
-            "explorer/context": [
-                {
-                    "group": "navigation@99",
-                    "command": "alt-editor.openFile"
-                }
-            ]
-        },
-        "configuration": {
-            "type": "object",
-            "title": "Open in External Editor configuration",
-            "properties": {
-                "alt-editor.name": {
-                    "type": [
-                        "string",
-                        null
-                    ],
-                    "enum": [
-                        "atom",
-                        "emacs",
-                        "idea14ce",
-                        "phpstorm",
-                        "sublime",
-                        "vim",
-                        "visualstudio",
-                        "webstorm",
-                        null
-                    ],
-                    "default": null,
-                    "description": "Editor to open a file. Once value is set, we try to detect a command to launch an editor."
-                },
-                "alt-editor.binary": {
-                    "type": [
-                        "string",
-                        null
-                    ],
-                    "default": null,
-                    "description": "Command to launch an editor."
-                },
-                "alt-editor.args": {
-                    "type": [
-                        "string",
-                        null
-                    ],
-                    "default": null,
-                    "description": "Option to specify arguments for a command. It can contain placeholders to be replaced by actual values. Supported placeholders: {filename}, {line} and {column}."
-                },
-                "alt-editor.terminal": {
-                    "type": [
-                        "boolean",
-                        null
-                    ],
-                    "default": null,
-                    "description": "Set to `true` if the editor to be opened in the terminal."
-                }
-            }
+    "menus": {
+      "editor/context": [
+        {
+          "group": "navigation@99",
+          "command": "alt-editor.openFile"
         }
+      ],
+      "editor/title/context": [
+        {
+          "group": "alt-editor@1",
+          "command": "alt-editor.openFile"
+        }
+      ],
+      "explorer/context": [
+        {
+          "group": "navigation@99",
+          "command": "alt-editor.openFile"
+        }
+      ]
     },
-    "main": "./out/src/extension",
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test",
-        "release": "standard-version",
-        "publish": "vsce publish"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
-        "standard-version": "4.4.0",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6"
-    },
-    "dependencies": {
-        "@generalov/open-in-editor": "^2.3.0"
+    "configuration": {
+      "type": "object",
+      "title": "Open in External Editor configuration",
+      "properties": {
+        "alt-editor.name": {
+          "type": [
+            "string",
+            null
+          ],
+          "enum": [
+            "atom",
+            "emacs",
+            "idea14ce",
+            "phpstorm",
+            "sublime",
+            "vim",
+            "visualstudio",
+            "webstorm",
+            null
+          ],
+          "default": null,
+          "description": "Editor to open a file. Once value is set, we try to detect a command to launch an editor."
+        },
+        "alt-editor.binary": {
+          "type": [
+            "string",
+            null
+          ],
+          "default": null,
+          "description": "Command to launch an editor."
+        },
+        "alt-editor.args": {
+          "type": [
+            "string",
+            null
+          ],
+          "default": null,
+          "description": "Option to specify arguments for a command. It can contain placeholders to be replaced by actual values. Supported placeholders: {filename}, {line} and {column}."
+        },
+        "alt-editor.terminal": {
+          "type": [
+            "boolean",
+            null
+          ],
+          "default": null,
+          "description": "Set to `true` if the editor to be opened in the terminal."
+        }
+      }
     }
+  },
+  "main": "./out/src/extension",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test",
+    "release": "standard-version",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "standard-version": "4.4.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6"
+  },
+  "dependencies": {
+    "@generalov/open-in-editor": "^2.3.0"
+  }
 }

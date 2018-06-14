@@ -1,3 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.7...v1.0.0) (2018-06-14)
+
+
+### Bug Fixes
+
+* vscode 1.24 ([c60054a](https://github.com/generalov/open-in-editor-vscode/commit/c60054a))
+
+
+
 <a name="0.9.7"></a>
 ## [0.9.7](https://github.com/generalov/open-in-editor-vscode/compare/v0.9.6...v0.9.7) (2017-08-03)
 
@@ -40,6 +54,3 @@
 
 <a name="0.9.0"></a>
 # 0.9.0 (2017-05-01)
-
-
-

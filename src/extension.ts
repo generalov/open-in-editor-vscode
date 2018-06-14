@@ -61,7 +61,7 @@ function createEditor(editorOptions: EditorOptions) {
 }
 
 function openFile(fileName: String, line: Number = 1, column: Number = 1, config: EditorConfig={}) {
-    if (Object.keys(config).length === 0) {
+    if (!config || Object.keys(config).length === 0) {
         config = <EditorConfig>vscode.workspace.getConfiguration(extension);
     }
     const options = getEditorOptions(config);
@@ -108,8 +108,14 @@ function openFileMenu(uri: vscode.Uri) {
 }
 
 function openFileCommand(...args: any[]) {
-    if (args[0].scheme) {
-        openFileMenu(args[0])
+    if (args.length === 0) {
+        openTextEditorFile(vscode.window.activeTextEditor, null);
+    } else if (args[0].scheme) {
+        if (vscode.window.activeTextEditor && args[0].path === vscode.window.activeTextEditor.document.fileName) {
+            openTextEditorFile(vscode.window.activeTextEditor, args[0])
+        } else {
+            openFileMenu(args[0])
+        }
     } else if (args[0].document) {
         openTextEditorFile(args[0], null)
     } else if (args.length === 1) {

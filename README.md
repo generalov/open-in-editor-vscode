@@ -91,6 +91,13 @@ Override the default arguments to use a single instance of the Vim editor and op
 
 The Vim should be compiled with `+clientserver` flag. Please run the `vim --version` and check the output.
 
+#### Emacs
+
+Use emacsclient to use an existing Emacs instance instead opening emacs in a terminal.
+
+    "alt-editor.binary": "emacsclient",
+    "alt-editor.args": "--alternate-editor=emacs --no-wait +{line}:{column} {filename}"
+
 ## For more information
 
 -   Powered by [open-in-editor](https://github.com/lahmatiy/open-in-editor)
